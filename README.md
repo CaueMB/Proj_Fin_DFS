@@ -1,2 +1,2 @@
-# Proj_Fin_DFS
- Projeto Final do curso de Full Stack
+# Projeto Final Desenvolvedor Full Stack
+ Projeto desenvolvido para avaliação final do curso de Desenvolvedor Full Stack.
