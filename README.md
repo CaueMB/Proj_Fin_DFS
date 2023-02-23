@@ -1,4 +1,4 @@
 # Projeto Final Desenvolvedor Full Stack
  Projeto desenvolvido para avaliação final do curso de Desenvolvedor Full Stack.
 
-O primeiro passo executado, foi a criação do banco de dados. Para isso, se utilizou do arquivo "Criando_BD.sql" e se executou, essa nova consulta, na master. Assim, o banco de dados foi criado.
+O primeiro passo executado, foi a criação do banco de dados. Para isso, se utilizou do arquivo "Criando_BD.sql" e se executou, essa nova consulta, na master. Assim, o banco de dados foi criado. Após a criação do Banco de Dados, se criou as tabelas utilizadas no projeto, elas foram criadas conforme o arquivo "Criando_Tabelas".
