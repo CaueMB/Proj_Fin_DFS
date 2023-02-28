@@ -6,6 +6,6 @@
         public int Id { get; set; }
         public string? Nome_Funcionario { get; set; }
         public string? Nome_Depart { get; set; }
-        public DateOnly Dia_Contratacao { get; set; }
+        public DateTime Dia_Contratacao { get; set; }
     }
 }
