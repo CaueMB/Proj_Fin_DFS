@@ -9,7 +9,7 @@ namespace BackEnd.Controllers
     //Fazer uso do atributo que identifica este Controller como uma Api
     [ApiController]
     //definir a rota da Api
-    [Route("api/Department")]
+    [Route("api/[controller]")]
     //Praticar o mecanismo de herança com a superclasse ControllerBase
     public class DepartamentoController : ControllerBase
     {
@@ -38,7 +38,8 @@ namespace BackEnd.Controllers
         //Resgatar um único registro da base
 
         //Definir a tarefa assincrona para recuperar o registro
-        [HttpGet("{id}")]
+        [HttpGet]
+        [Route("{id}")]
         public async Task<IActionResult> Get(int id)
         {
             //Definir uma propriedade para receber - de maneira assincrona - um registro da base, acessando a entity, devidamente indentificado com o valor do parametro id
@@ -87,7 +88,8 @@ namespace BackEnd.Controllers
         //Excluir registros da base
 
         //Definir a tarefa assincrona com o atributo necessário para a exclusão de um registro
-        [HttpDelete("{id}")]
+        [HttpDelete]
+        [Route("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             //Definir uma propriedade para receber como valor uma busca para um determinado registro
