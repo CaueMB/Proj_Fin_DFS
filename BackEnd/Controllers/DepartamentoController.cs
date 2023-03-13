@@ -74,10 +74,21 @@ namespace BackEnd.Controllers
 
         //Definir a tarefa assincrona para que o registro seja atualizado
         [HttpPut]
-        public async Task<IActionResult> Put(Departamento novoRegistro)
+        [Route("{id}")]
+        public async Task<IActionResult> Put([FromRoute]int id, Departamento novoRegistro)
         {
-            //Definir, acessando a entity, a operação necessária para a atualização do registro e seu devido rearmazenamento
-            _dbContext.Departamento.Update(novoRegistro);
+            //Definir uma prop para receber - de maneira assincrona - um registro da base, acessando a entity, devidamente identificado com o valor dado ao parâmetro id
+            var encontrarDepartamento = await _dbContext.Departamento.FindAsync(id);
+
+            //Verificar a existência do valor id
+            if (encontrarDepartamento == null)
+            {
+                return NotFound();
+            }
+
+            //Definir, acessando e entity, a operação necessaria para a atualização do registro e seu devido rearmazenamento
+            encontrarDepartamento.Nome_Departamento = novoRegistro.Nome_Departamento;
+
             //de forma sincrona fazer uso da operação de "salvamento" da alteração realizada
             await _dbContext.SaveChangesAsync();
 
