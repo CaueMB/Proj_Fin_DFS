@@ -91,7 +91,7 @@ namespace BackEnd.Controllers
             await _dbContext.SaveChangesAsync();
 
             //Retornar o registro devidamente atualizado
-            return Ok(novoRegistro);
+            return Ok(encontrarFuncionario);
         }
 
         //Excluir registros da base

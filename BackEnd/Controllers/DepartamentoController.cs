@@ -93,7 +93,7 @@ namespace BackEnd.Controllers
             await _dbContext.SaveChangesAsync();
 
             //Retornar o registro devidamente atualizado
-            return Ok(novoRegistro);
+            return Ok(encontrarDepartamento);
         }
 
         //Excluir registros da base
