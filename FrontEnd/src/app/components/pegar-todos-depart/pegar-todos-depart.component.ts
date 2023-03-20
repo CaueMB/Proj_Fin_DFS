@@ -7,7 +7,7 @@ import { DepartamentoAPIService } from 'src/app/serviceAPI/departamento.api.serv
   templateUrl: './pegar-todos-depart.component.html',
   styleUrls: ['./pegar-todos-depart.component.css']
 })
-export class PegarTodosDepartComponent {
+export class PegarTodosDepartComponent implements OnInit{
 
   titleComp: string = "Lista de Departamentos"
 

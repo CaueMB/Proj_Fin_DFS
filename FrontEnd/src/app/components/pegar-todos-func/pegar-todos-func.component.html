@@ -1,1 +1,38 @@
-<p>pegar-todos-func works!</p>
+<div class="container"><!--Div Principal-->
+    <div class="col-md-12"><!--Div Para Exibir os dados - se existirem-->
+        <div *ngIf="listaFuncionarios != 0; else noData"><!--Div utilizada para a diretiva estrutural *ngIf-->
+            <h3>{{ titleComp }}</h3>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nome do Funcionário</th>
+                        <th scope="col">Departamento</th>
+                        <th scope="col">Dia da Contratação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let itens of listaFuncionarios"><!--Aqui será aplicada a diretiva estrutural *ngFor-->
+                        <td>{{itens.id}}</td>
+                        <td>{{itens.nome_Funcionario}}</td>
+                        <td>{{itens.nome_Depart}}</td>
+                        <td>{{itens.dia_Contratacao}}</td>
+                        <button class="btn btn-outline-primary btn-sm" routerLink="/atualizar-func/{{ itens.id }}">Editar</button>
+                        <button class="btn btn-outline-primary btn-sm" routerLink="/pegar-um-func/{{ itens.id }}">Exibir</button>
+                        <button class="btn btn-outline-primary btn-sm" (click)="delRegistroFuncionario(itens.id)">Excluir</button>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <ng-template #noData><!--Template/View que será exibida - se os dados não existirem-->
+        <div class="text-center">
+            <p>
+                Registros não encontrados! Por Favor, cadastre
+            </p>
+            <button class="btn btn-outline-primary" routerLink="/inserir-func">Criar Registro</button>
+        </div>
+    </ng-template>
+</div>

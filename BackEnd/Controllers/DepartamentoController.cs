@@ -27,6 +27,7 @@ namespace BackEnd.Controllers
 
         //Definir a tarefa assincrona com o atributo - de forma explicita - [HttpGet]
         [HttpGet]
+        [Route("PegarTodosDepartamentos")]
         public async Task<IActionResult> Get()
         {
             //Definir uma propriedade para receber - de forma assincrona - todos os registros da base a partir do acesso a entity
@@ -39,7 +40,7 @@ namespace BackEnd.Controllers
 
         //Definir a tarefa assincrona para recuperar o registro
         [HttpGet]
-        [Route("{id}")]
+        [Route("PegarUmDepartamento/{id}")]
         public async Task<IActionResult> Get(int id)
         {
             //Definir uma propriedade para receber - de maneira assincrona - um registro da base, acessando a entity, devidamente indentificado com o valor do parametro id
@@ -58,6 +59,7 @@ namespace BackEnd.Controllers
 
         //Definir a tarefa assincrona para adicionar um registro na base de dados
         [HttpPost]
+        [Route("AdDepartamento")]
         public async Task<IActionResult> Post(Departamento registro)
         {
             //Fazer acesso a entity Departamento para que os dados recebidos pelo parâmetro registro possam ser enviados para base
@@ -74,7 +76,7 @@ namespace BackEnd.Controllers
 
         //Definir a tarefa assincrona para que o registro seja atualizado
         [HttpPut]
-        [Route("{id}")]
+        [Route("AtDepartamento/{id}")]
         public async Task<IActionResult> Put([FromRoute]int id, Departamento novoRegistro)
         {
             //Definir uma prop para receber - de maneira assincrona - um registro da base, acessando a entity, devidamente identificado com o valor dado ao parâmetro id
@@ -100,7 +102,7 @@ namespace BackEnd.Controllers
 
         //Definir a tarefa assincrona com o atributo necessário para a exclusão de um registro
         [HttpDelete]
-        [Route("{id}")]
+        [Route("DelDeparatamento/{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             //Definir uma propriedade para receber como valor uma busca para um determinado registro

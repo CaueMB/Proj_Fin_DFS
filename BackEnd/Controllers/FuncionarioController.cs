@@ -26,6 +26,7 @@ namespace BackEnd.Controllers
 
         //Definir a tarefa assincrona com o atributo - de forma explicita - [HttpGet]
         [HttpGet]
+        [Route("PegarTodosFuncionarios")]
         public async Task<IActionResult> Get()
         {
             //Definir uma propriedade para receber - de forma assincrona - todos os registros da base a partir do acesso a entity
@@ -35,7 +36,7 @@ namespace BackEnd.Controllers
         }
 
         [HttpGet]
-        [Route("{id}")]
+        [Route("PegarUmFuncionario/{id}")]
         public async Task<IActionResult> Get(int id)
         {
             //Definir uma propriedade para receber - de maneira assincrona - um registro da base, acessando a entity, devidamente indentificado com o valor do parametro id
@@ -54,6 +55,7 @@ namespace BackEnd.Controllers
 
         //Definir a tarefa assincrona para adicionar um registro na base de dados
         [HttpPost]
+        [Route("AdFuncionario")]
         public async Task<IActionResult> Post(Funcionario registro)
         {
             //Fazer acesso a entity Funcionario para que os dados recebidos pelo parâmetro registro possam ser enviados para base
@@ -70,7 +72,7 @@ namespace BackEnd.Controllers
 
         //Definir a tarefa assincrona para que o registro seja atualizado
         [HttpPut]
-        [Route("{id}")]
+        [Route("AtFuncionario/{id}")]
         public async Task<IActionResult> Put([FromRoute]int id, Funcionario novoRegistro)
         {
             //Definir uma prop para receber - de maneira assincrona - um registro da base, acessando a entity, devidamente identificado com o valor dado ao parâmetro id
@@ -98,7 +100,7 @@ namespace BackEnd.Controllers
 
         //Definir a tarefa assincrona com o atributo necessário para a exclusão de um registro
         [HttpDelete]
-        [Route("{id}")]
+        [Route("DelFuncionario/{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             //Definir uma propriedade para receber como valor uma busca para um determinado registro

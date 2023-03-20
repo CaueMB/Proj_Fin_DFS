@@ -7,7 +7,7 @@ import { FuncionarioAPIService } from 'src/app/serviceAPI/funcionario.api.servic
   templateUrl: './pegar-todos-func.component.html',
   styleUrls: ['./pegar-todos-func.component.css']
 })
-export class PegarTodosFuncComponent {
+export class PegarTodosFuncComponent implements OnInit{
 
   titleComp: string = "Lista de Funcionários"
 

@@ -1,1 +1,35 @@
-<p>pegar-todos-depart works!</p>
+<div class="container"><!--Div Principal-->
+    <div class="col-md-12"><!--Div Para Exibir os dados - se existirem-->
+        <div *ngIf="listaDepartamento != 0; else noData"><!--Div utilizada para a diretiva estrutural *ngIf-->
+            <h3>{{ titleComp }}</h3>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Departamento</th>
+                        <th scope="col">Ação a executar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let itens of listaDepartamento"><!--Aqui será aplicada a diretiva estrutural *ngFor-->
+                        <td>{{itens.id}}</td>
+                        <td>{{itens.nome_Departamento}}</td>
+                        <button class="btn btn-outline-primary btn-sm" routerLink="/atualizar-depart/{{ itens.id }}">Editar</button>
+                        <button class="btn btn-outline-primary btn-sm" routerLink="/pegar-um-depart/{{ itens.id }}">Exibir</button>
+                        <button class="btn btn-outline-primary btn-sm" (click)="delRegistroDepartamento(itens.id)">Excluir</button>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <ng-template #noData><!--Template/View que será exibida - se os dados não existirem-->
+        <div class="text-center">
+            <p>
+                Registros não encontrados! Por Favor, cadastre
+            </p>
+            <button class="btn btn-outline-primary" routerLink="/inserir-depart">Criar Registro</button>
+        </div>
+    </ng-template>
+</div>

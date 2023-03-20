@@ -26,26 +26,26 @@ export class DepartamentoAPIService{
 
     //Estabelecer o método/requisição http para chamar a API e acessar o método que recupera todos os registros
     PegarTodosDepartamentos(): Observable<DepartamentoInterface>{
-        return this.http.get<DepartamentoInterface>(this.apiUrlBase)
+        return this.http.get<DepartamentoInterface>(this.apiUrlBase+'/PegarTodosDepartamentos')
     }
 
     //Estabelecer o método/requisição para recuperar um único registro da base - fazendo chamada a API
     PegarUmDepartamento(id: number): Observable<DepartamentoInterface>{
-        return this.http.get<DepartamentoInterface>(this.apiUrlBase+'/'+id)
+        return this.http.get<DepartamentoInterface>(this.apiUrlBase+'/PegarUmDepartamento/'+id)
     }
 
     //Estabelecer o método/requisição/função para inserir dados na base - fazendo a chamada da API
     InserirRegistroDepartamento(receberDados: any): Observable<DepartamentoInterface>{
-        return this.http.post<DepartamentoInterface>(this.apiUrlBase, JSON.stringify(receberDados), this.crossAuth)
+        return this.http.post<DepartamentoInterface>(this.apiUrlBase+'/AdDepartamento/', JSON.stringify(receberDados), this.crossAuth)
     }
 
     //Estabelecer o método/requisição/função para atualizar/alterar os dados na base fazendo a chamada da API
     AtualizarDepartamento(id: number, outroRegistro:any): Observable<DepartamentoInterface>{
-        return this.http.put<DepartamentoInterface>(this.apiUrlBase+'/'+id, JSON.stringify(outroRegistro), this.crossAuth)
+        return this.http.put<DepartamentoInterface>(this.apiUrlBase+'/AtDepartamento/'+id, JSON.stringify(outroRegistro), this.crossAuth)
     }
 
     //Estabelecer o método/requisição/função para excluir um registro da base - fazendo a chamada da API
     DeletarDepartamento(id: any): Observable<DepartamentoInterface>{
-        return this.http.delete<DepartamentoInterface>(this.apiUrlBase+'/'+id, this.crossAuth)
+        return this.http.delete<DepartamentoInterface>(this.apiUrlBase+'/DelDeparatamento/'+id, this.crossAuth)
     }
 }
