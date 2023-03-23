@@ -41,7 +41,7 @@ namespace BackEnd.Controllers
         //Definir a tarefa assincrona para recuperar o registro
         [HttpGet]
         [Route("PegarUmDepartamento/{id}")]
-        public async Task<IActionResult> Get(int id)
+        public async Task<IActionResult> GetOne(int id)
         {
             //Definir uma propriedade para receber - de maneira assincrona - um registro da base, acessando a entity, devidamente indentificado com o valor do parametro id
             var departamentoUnico = await _dbContext.Departamento.FindAsync(id);

@@ -30,7 +30,7 @@ export class DepartamentoAPIService{
     }
 
     //Estabelecer o método/requisição para recuperar um único registro da base - fazendo chamada a API
-    PegarUmDepartamento(id: number): Observable<DepartamentoInterface>{
+    PegarUmDosDepartamentos(id: any): Observable<DepartamentoInterface>{
         return this.http.get<DepartamentoInterface>(this.apiUrlBase+'/PegarUmDepartamento/'+id)
     }
 

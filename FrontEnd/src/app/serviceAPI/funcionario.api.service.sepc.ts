@@ -30,7 +30,7 @@ export class FuncionarioAPIService{
     }
 
     //Estabelecer o método/requisição para recuperar um único registro da base - fazendo chamada a API
-    PegarUmFuncionario(id: number): Observable<FuncionarioInterface>{
+    PegarUmFuncionario(id: any): Observable<FuncionarioInterface>{
         return this.http.get<FuncionarioInterface>(this.apiUrlBase+'/PegarUmFuncionario/'+id)
     }
 

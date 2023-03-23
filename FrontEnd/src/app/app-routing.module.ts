@@ -15,12 +15,12 @@ import { AtualizarFuncComponent } from './components/atualizar-func/atualizar-fu
 const routes: Routes = [
   {path:'pegar-todos-depart', component:PegarTodosDepartComponent},
   {path:'pegar-todos-func', component:PegarTodosFuncComponent},
-  {path:'pegar-um-depart/:Id', component:PegarUmDepartComponent},
-  {path:'pegar-um-func/:Id', component:PegarUmFuncComponent},
+  {path:'pegar-um-depart/:id', component:PegarUmDepartComponent},
+  {path:'pegar-um-func/:id', component:PegarUmFuncComponent},
   {path:'inserir-depart', component:InserirDepartComponent},
   {path:'inserir-func', component:InserirFuncComponent},
-  {path:'atualizar-depart/:Id', component:AtualizarDepartComponent},
-  {path:'atualizar-func/:Id', component:AtualizarFuncComponent}
+  {path:'atualizar-depart/:id', component:AtualizarDepartComponent},
+  {path:'atualizar-func/:id', component:AtualizarFuncComponent}
 ];
 
 @NgModule({
