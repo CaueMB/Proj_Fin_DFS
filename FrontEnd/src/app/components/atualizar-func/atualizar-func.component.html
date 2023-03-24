@@ -1,1 +1,22 @@
-<p>atualizar-func works!</p>
+<!--Criar formulário para a obtenção de dados para armazenamento-->
+<div class="container">
+    <div class="col-md-12">
+        <h3>{{ titleComp }}</h3>
+
+        <div class="form-group">
+            <input type="text" [(ngModel)] = "FuncionarioAtualizarDado.nome_Funcionario" placeholder="Informe o nome do funcionário" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <input type="text" [(ngModel)] = "FuncionarioAtualizarDado.nome_Depart" placeholder="Informe o departamento" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <input type="date" [(ngModel)] = "FuncionarioAtualizarDado.dia_Contratacao" placeholder="Informe a data de contratação do funcionário" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-success btn-large btn-block" (click) = "AtualizarFuncionarioRegistro()">Salvar Registro</button>
+        </div>
+    </div>
+</div>
