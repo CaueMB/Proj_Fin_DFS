@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class InserirDepartComponent {
   //Definir um titulo para o componente
-  titleComp: string = 'Inserir um registro'
+  titleComp: string = 'Adicionar Departamento'
 
   //Criar uma prop - objeto literal - para receber os valores que virão da view
   @Input() inserirRegistro = {

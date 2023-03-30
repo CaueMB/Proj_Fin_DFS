@@ -1,23 +1,63 @@
+<div class="container">
+    <nav class="navbar bg-white float-end">
+      <form class="container-fluid justify-content-start">
+        <button class="btn btn-sm btn-primary" type="button" routerLink = "/inserir-depart">Adicionar Departamento</button>
+      </form>
+    </nav>
+</div>
+
+<div class="p-4 invisible"></div>
+
 <div class="container"><!--Div Principal-->
     <div class="col-md-12"><!--Div Para Exibir os dados - se existirem-->
         <div *ngIf="listaDepartamento != 0; else noData"><!--Div utilizada para a diretiva estrutural *ngIf-->
             <h3>{{ titleComp }}</h3>
 
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Filtrar" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button type="button" class="btn btn-light">
+                <!--(click)="sortResult('DepartmentId',true)"-->
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-down-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 5a.5.5 0 0 0-1 0v4.793L5.354 7.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 9.793V5z"/>
+                </svg>
+                </button>
+                <button type="button" class="btn btn-light me-2">
+                <!--(click)="sortResult('DepartmentId',false)"-->
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-up-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
+                </svg>
+                </button>
+
+                <input type="text" class="form-control" placeholder="Filtrar" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button type="button" class="btn btn-light">
+                    <!--(click)="sortResult('DepartmentId',true)"-->
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-down-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 5a.5.5 0 0 0-1 0v4.793L5.354 7.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 9.793V5z"/>
+                    </svg>
+                    </button>
+                    <button type="button" class="btn btn-light">
+                    <!--(click)="sortResult('DepartmentId',false)"-->
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-up-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
+                    </svg>
+                    </button>
+            </div>
+
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Departamento</th>
-                        <th scope="col">Ação a executar</th>
+                        <th scope="col">IdDepartamento</th>
+                        <th scope="col">Nome do Departamento</th>
+                        <th scope="col">Opções</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor = "let itens of listaDepartamento"><!--Aqui será aplicada a diretiva estrutural *ngFor-->
                         <td>{{itens.id}}</td>
                         <td>{{itens.nome_Departamento}}</td>
-                        <button class="btn btn-outline-primary btn-sm" routerLink="/atualizar-depart/{{ itens.id }}">Editar</button>
-                        <button class="btn btn-outline-primary btn-sm" routerLink="/pegar-um-depart/{{ itens.id }}">Exibir</button>
-                        <button class="btn btn-outline-primary btn-sm" (click)="delRegistroDepartamento(itens.id)">Excluir</button>
+                        <button class="btn btn-outline-primary btn-sm mx-2" routerLink="/atualizar-depart/{{ itens.id }}">Editar</button>
+                        <button class="btn btn-outline-secondary btn-sm me-2" routerLink="/pegar-um-depart/{{ itens.id }}">Exibir</button>
+                        <button class="btn btn-outline-danger btn-sm" (click)="delRegistroDepartamento(itens.id)">Excluir</button>
                     </tr>
                 </tbody>
             </table>
