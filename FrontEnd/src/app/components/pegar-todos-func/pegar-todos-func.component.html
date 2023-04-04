@@ -58,7 +58,7 @@
                         <td>{{itens.id}}</td>
                         <td>{{itens.nome_Funcionario}}</td>
                         <td>{{itens.nome_Depart}}</td>
-                        <td>{{itens.dia_Contratacao}}</td>
+                        <td>{{itens.dia_Contratacao | date:'dd/MM/yyyy'}}</td>
                         <button class="btn btn-outline-primary btn-sm mx-2" routerLink="/atualizar-func/{{ itens.id }}">Editar</button>
                         <button class="btn btn-outline-secondary btn-sm me-2" routerLink="/pegar-um-func/{{ itens.id }}">Exibir</button>
                         <button class="btn btn-outline-danger btn-sm" (click)="delRegistroFuncionario(itens.id)">Excluir</button>

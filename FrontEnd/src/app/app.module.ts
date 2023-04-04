@@ -27,7 +27,7 @@ import { FuncionarioAPIService } from './serviceAPI/funcionario.api.service.sepc
     PegarTodosDepartComponent,
     PegarTodosFuncComponent,
     PegarUmDepartComponent,
-    PegarUmFuncComponent
+    PegarUmFuncComponent,
   ],
   imports: [
     BrowserModule,
