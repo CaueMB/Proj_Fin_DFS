@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 //Importar a referência do service para uso no componente
 import { FuncionarioAPIService } from 'src/app/serviceAPI/funcionario.api.service.sepc';
 
@@ -10,6 +10,9 @@ import { FuncionarioAPIService } from 'src/app/serviceAPI/funcionario.api.servic
 export class PegarTodosFuncComponent implements OnInit{
 
   titleComp: string = "Lista de Funcionários"
+
+  //Criar uma prop - objeto literal - para receber o valor do id que virá da view
+  @Input() idFun: any =''
 
   //Criar um propriedade para ser a coleção iterável de dados que será manipulada pelo componente
   listaFuncionarios: any = []

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 //Importar a referência do service para uso no componente
 import { DepartamentoAPIService } from 'src/app/serviceAPI/departamento.api.service';
 
@@ -10,6 +10,9 @@ import { DepartamentoAPIService } from 'src/app/serviceAPI/departamento.api.serv
 export class PegarTodosDepartComponent implements OnInit{
 
   titleComp: string = "Lista de Departamentos"
+
+  //Criar uma prop - objeto literal - para receber o valor do id que virá da view
+  @Input() idDep: any = ''
 
   //Criar um propriedade para ser a coleção iterável de dados que será manipulada pelo componente
   listaDepartamento: any = []
