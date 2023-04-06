@@ -123,5 +123,34 @@ namespace BackEnd.Controllers
             //Retornar o método ok(), pois o registro foi excluido
             return Ok();
         }
+
+        //Resgatar um registros da base
+
+        //Definir a tarefa para recuperar um registro
+        [HttpGet]
+        [Route("PegarUmDepartamentoNome/{nome_Departamento}")]
+        public async Task<IActionResult> PegarPeloNome(string nome_Departamento)
+        {
+            Departamento listaResultado = new Departamento();
+            var listaDepartamento = await _dbContext.Departamento.ToListAsync();
+
+            //Definir um laço foreach para verificar se o nome dado exite na lista, retornando os seus dados caso exista
+            foreach (var i in listaDepartamento)
+            {
+                if(i.Nome_Departamento == nome_Departamento)
+                {
+                    listaResultado = i;
+                }
+            }
+
+            //Verificar se o valor dado ao parâmetro existe
+            if (listaResultado == null)
+            {
+                return NotFound();
+            }
+
+            //Se o valor do parâmetro id existir, o registro será retornado e disponobilizado para o front
+            return Ok(listaResultado);
+        }
     }
 }

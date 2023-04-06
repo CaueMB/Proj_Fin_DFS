@@ -48,4 +48,9 @@ export class DepartamentoAPIService{
     DeletarDepartamento(id: any): Observable<DepartamentoInterface>{
         return this.http.delete<DepartamentoInterface>(this.apiUrlBase+'/DelDeparatamento/'+id, this.crossAuth)
     }
+
+    //Estabelecer o método/requisição para recuperar um único registro da base - fazendo chamada a API
+    PegarUmDosDepartamentosNome(nome_Departamento: any): Observable<DepartamentoInterface>{
+        return this.http.get<DepartamentoInterface>(this.apiUrlBase+'/PegarUmDepartamentoNome/'+nome_Departamento)
+    }
 }

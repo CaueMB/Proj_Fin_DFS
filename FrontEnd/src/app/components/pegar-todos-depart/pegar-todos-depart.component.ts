@@ -14,6 +14,9 @@ export class PegarTodosDepartComponent implements OnInit{
   //Criar uma prop - objeto literal - para receber o valor do id que virá da view
   @Input() idDep: any = ''
 
+  //Criar uma prop - objeto literal - para receber o valor do id que virá da view
+  @Input() nomeDep: any = ''
+
   //Criar um propriedade para ser a coleção iterável de dados que será manipulada pelo componente
   listaDepartamento: any = []
 

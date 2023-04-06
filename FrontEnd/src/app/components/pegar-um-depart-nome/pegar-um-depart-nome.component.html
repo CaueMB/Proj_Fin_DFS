@@ -1,0 +1,30 @@
+<!--Implementar a view necessária para exibir detalhes de info sobre o registro-->
+
+<div class="container"><!--div principal-->
+    <div class="col-md-12"><!--div para organizar os espaçamentos onde os dados serão exibidos-->
+        <div *ngIf = "UmRegistroDepartamentoNome != 0; else noRegister"><!--div para uso da diretiva *ngIf-->
+            <h3>{{ titleComp }}</h3>
+            <table class = "table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">IdDepartamento</th>
+                        <th scope="col">Nome do Departamento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ UmRegistroDepartamentoNome.id }}</td>
+                        <td>{{ UmRegistroDepartamentoNome.nome_Departamento }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <ng-template #noRegister><!--"mini view" para ser exibida se o registro não existir-->
+            <div class="text-center">
+                <p>Nenhum registro foi identificado. Crie um novo! Clique no botão abaixo...</p>
+                <button class="btn btn-outline-primary" routerLink="inserir-depart">Criar Registro</button>
+            </div>
+        </ng-template>
+    </div>
+</div>
