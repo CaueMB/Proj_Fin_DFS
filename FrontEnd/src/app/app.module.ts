@@ -17,6 +17,7 @@ import { PegarUmFuncComponent } from './components/pegar-um-func/pegar-um-func.c
 import { DepartamentoAPIService } from './serviceAPI/departamento.api.service';
 import { FuncionarioAPIService } from './serviceAPI/funcionario.api.service.sepc';
 import { PegarUmDepartNomeComponent } from './components/pegar-um-depart-nome/pegar-um-depart-nome.component';
+import { PegarUmFuncNomeComponent } from './components/pegar-um-func-nome/pegar-um-func-nome.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { PegarUmDepartNomeComponent } from './components/pegar-um-depart-nome/pe
     PegarUmDepartComponent,
     PegarUmFuncComponent,
     PegarUmDepartNomeComponent,
+    PegarUmFuncNomeComponent,
   ],
   imports: [
     BrowserModule,

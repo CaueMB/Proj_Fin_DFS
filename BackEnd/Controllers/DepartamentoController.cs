@@ -137,7 +137,7 @@ namespace BackEnd.Controllers
             //Definir um laço foreach para verificar se o nome dado exite na lista, retornando os seus dados caso exista
             foreach (var i in listaDepartamento)
             {
-                if(i.Nome_Departamento == nome_Departamento)
+                if(((i.Nome_Departamento).ToLower()) == (nome_Departamento.ToLower()))
                 {
                     listaResultado = i;
                 }

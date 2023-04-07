@@ -48,4 +48,9 @@ export class FuncionarioAPIService{
     DeletarFuncionario(id: any): Observable<FuncionarioInterface>{
         return this.http.delete<FuncionarioInterface>(this.apiUrlBase+'/DelFuncionario/'+id, this.crossAuth)
     }
+
+    //Estabelecer o método/requisição para recuperar um único registro da base - fazendo chamada a API
+    PegarUmFuncionarioNome(nome_Funcionario: any): Observable<FuncionarioInterface>{
+        return this.http.get<FuncionarioInterface>(this.apiUrlBase+'/PegarUmFuncionarioNome/'+nome_Funcionario)
+    }
 }

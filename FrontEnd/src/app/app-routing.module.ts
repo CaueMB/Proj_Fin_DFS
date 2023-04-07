@@ -11,6 +11,7 @@ import { InserirFuncComponent } from './components/inserir-func/inserir-func.com
 import { AtualizarDepartComponent } from './components/atualizar-depart/atualizar-depart.component';
 import { AtualizarFuncComponent } from './components/atualizar-func/atualizar-func.component';
 import { PegarUmDepartNomeComponent } from './components/pegar-um-depart-nome/pegar-um-depart-nome.component';
+import { PegarUmFuncNomeComponent } from './components/pegar-um-func-nome/pegar-um-func-nome.component';
 
 //Compor as rotas
 const routes: Routes = [
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path:'inserir-func', component:InserirFuncComponent},
   {path:'atualizar-depart/:id', component:AtualizarDepartComponent},
   {path:'atualizar-func/:id', component:AtualizarFuncComponent},
-  {path:'pegar-um-depart-nome/:nome_Departamento', component:PegarUmDepartNomeComponent}
+  {path:'pegar-um-depart-nome/:nome_Departamento', component:PegarUmDepartNomeComponent},
+  {path:'pegar-um-func-nome/:nome_Funcionario', component:PegarUmFuncNomeComponent}
 ];
 
 @NgModule({

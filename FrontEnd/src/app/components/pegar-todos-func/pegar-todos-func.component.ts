@@ -14,6 +14,9 @@ export class PegarTodosFuncComponent implements OnInit{
   //Criar uma prop - objeto literal - para receber o valor do id que virá da view
   @Input() idFun: any =''
 
+  //Criar uma prop - objeto literal - para receber o valor do nome que virá da view
+  @Input() nomeFun: any =''
+
   //Criar um propriedade para ser a coleção iterável de dados que será manipulada pelo componente
   listaFuncionarios: any = []
 

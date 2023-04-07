@@ -1,0 +1,35 @@
+<!--Implementar a view necessária para exibir detalhes de info sobre o registro-->
+
+<div class="container"><!--Div Principal-->
+    <div class="col-md-12"><!--div para organizar os espaçamentos onde os dados serão exibidos-->
+        <div *ngIf = "UmRegistroFuncionarioNome != 0; else noRegister"><!--div para uso da diretiva *ngIf-->
+            <h3>{{ titleComp }}</h3>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nome do Funcionário</th>
+                        <th scope="col">Departamento</th>
+                        <th scope="col">Dia da Contratação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{UmRegistroFuncionarioNome.id}}</td>
+                        <td>{{UmRegistroFuncionarioNome.nome_Funcionario}}</td>
+                        <td>{{UmRegistroFuncionarioNome.nome_Depart}}</td>
+                        <td>{{UmRegistroFuncionarioNome.dia_Contratacao | date:'dd/MM/yyyy'}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <ng-template #noRegister><!--"mini view" para ser exibida se o registro não existir-->
+        <div class="text-center">
+            <p>Nenhum registro foi identificado. Crie um novo! Clique no botão abaixo...</p>
+            <button class="btn btn-outline-primary" routerLink="/inserir-func">Criar Registro</button>
+        </div>
+    </ng-template>
+</div>
