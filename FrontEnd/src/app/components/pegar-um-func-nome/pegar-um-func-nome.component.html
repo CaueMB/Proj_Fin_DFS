@@ -15,11 +15,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>{{UmRegistroFuncionarioNome.id}}</td>
-                        <td>{{UmRegistroFuncionarioNome.nome_Funcionario}}</td>
-                        <td>{{UmRegistroFuncionarioNome.nome_Depart}}</td>
-                        <td>{{UmRegistroFuncionarioNome.dia_Contratacao | date:'dd/MM/yyyy'}}</td>
+                    <tr *ngFor = "let itens of UmRegistroFuncionarioNome">
+                        <td>{{itens.id}}</td>
+                        <td>{{itens.nome_Funcionario}}</td>
+                        <td>{{itens.nome_Depart}}</td>
+                        <td>{{itens.dia_Contratacao | date:'dd/MM/yyyy'}}</td>
                     </tr>
                 </tbody>
             </table>

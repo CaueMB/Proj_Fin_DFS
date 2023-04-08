@@ -12,9 +12,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>{{ UmRegistroDepartamentoNome.id }}</td>
-                        <td>{{ UmRegistroDepartamentoNome.nome_Departamento }}</td>
+                    <tr *ngFor = "let itens of UmRegistroDepartamentoNome">
+                        <td>{{ itens.id }}</td>
+                        <td>{{ itens.nome_Departamento }}</td>
                     </tr>
                 </tbody>
             </table>

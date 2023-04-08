@@ -131,7 +131,7 @@ namespace BackEnd.Controllers
         [Route("PegarUmDepartamentoNome/{nome_Departamento}")]
         public async Task<IActionResult> PegarPeloNome(string nome_Departamento)
         {
-            Departamento listaResultado = new Departamento();
+            List<Departamento> listaResultado = new List<Departamento>();
             var listaDepartamento = await _dbContext.Departamento.ToListAsync();
 
             //Definir um laço foreach para verificar se o nome dado exite na lista, retornando os seus dados caso exista
@@ -139,7 +139,7 @@ namespace BackEnd.Controllers
             {
                 if(((i.Nome_Departamento).ToLower()) == (nome_Departamento.ToLower()))
                 {
-                    listaResultado = i;
+                    listaResultado.Add(i);
                 }
             }
 

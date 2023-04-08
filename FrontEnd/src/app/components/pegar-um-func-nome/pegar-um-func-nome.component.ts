@@ -14,7 +14,7 @@ export class PegarUmFuncNomeComponent implements OnInit{
   titleComp: string = 'Detalhes do Funcionário'
 
   //Criar uma prop para ser o elemento iteravel de dados com o qual o componente lidará
-  UmRegistroFuncionarioNome: any = {}
+  UmRegistroFuncionarioNome: any = []
 
   //Praticar a referência de instância para gerar as DIs do service e da classe ActivatedRoute
   constructor(
