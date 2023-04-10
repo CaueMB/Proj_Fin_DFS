@@ -58,6 +58,9 @@ namespace BackEnd.Controllers
         [Route("AdFuncionario")]
         public async Task<IActionResult> Post(Funcionario registro)
         {
+            //Guardar o nome do registro com as letras em maiúsculo para que na hora de pesquisar recebermos todos os registros
+            registro.Nome_Funcionario = registro.Nome_Funcionario.ToUpper();
+
             //Fazer acesso a entity Funcionario para que os dados recebidos pelo parâmetro registro possam ser enviados para base
             _dbContext.Funcionario.Add(registro);
 
@@ -85,7 +88,7 @@ namespace BackEnd.Controllers
             }
 
             //Definir, acessando e entity, a operação necessaria para a atualização do registro e seu devido rearmazenamento
-            encontrarFuncionario.Nome_Funcionario = novoRegistro.Nome_Funcionario;
+            encontrarFuncionario.Nome_Funcionario = novoRegistro.Nome_Funcionario.ToUpper();
             encontrarFuncionario.Nome_Depart = novoRegistro.Nome_Depart;
             encontrarFuncionario.Dia_Contratacao = novoRegistro.Dia_Contratacao;
 
@@ -135,7 +138,7 @@ namespace BackEnd.Controllers
             //Definir um laço foreach para verificar se o nome dado exite na lista, retornando os seus dados caso exista
             foreach (var i in listaFuncionario)
             {
-                if (((i.Nome_Funcionario).ToLower()) == (nome_Funcionario.ToLower()))
+                if (i.Nome_Funcionario.Contains((nome_Funcionario.ToUpper()).Trim()))
                 {
                     listaResultado.Add(i);
                 }

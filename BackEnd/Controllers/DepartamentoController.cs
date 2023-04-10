@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using BackEnd.Data;
 using BackEnd.Data.Entities;
+using Microsoft.Win32;
 
 namespace BackEnd.Controllers
 {
@@ -62,6 +63,9 @@ namespace BackEnd.Controllers
         [Route("AdDepartamento")]
         public async Task<IActionResult> Post(Departamento registro)
         {
+            //Guardar o nome do registro com as letras em maiúculo para que na hora de pesquisar recebermos todos os registros
+            registro.Nome_Departamento = registro.Nome_Departamento.ToUpper();
+
             //Fazer acesso a entity Departamento para que os dados recebidos pelo parâmetro registro possam ser enviados para base
             _dbContext.Departamento.Add(registro);
 
@@ -89,7 +93,7 @@ namespace BackEnd.Controllers
             }
 
             //Definir, acessando e entity, a operação necessaria para a atualização do registro e seu devido rearmazenamento
-            encontrarDepartamento.Nome_Departamento = novoRegistro.Nome_Departamento;
+            encontrarDepartamento.Nome_Departamento = novoRegistro.Nome_Departamento.ToUpper();
 
             //de forma sincrona fazer uso da operação de "salvamento" da alteração realizada
             await _dbContext.SaveChangesAsync();
@@ -137,7 +141,7 @@ namespace BackEnd.Controllers
             //Definir um laço foreach para verificar se o nome dado exite na lista, retornando os seus dados caso exista
             foreach (var i in listaDepartamento)
             {
-                if(((i.Nome_Departamento).ToLower()) == (nome_Departamento.ToLower()))
+                if(i.Nome_Departamento.Contains((nome_Departamento.ToUpper()).Trim()))
                 {
                     listaResultado.Add(i);
                 }
