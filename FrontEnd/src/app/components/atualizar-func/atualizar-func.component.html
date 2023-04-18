@@ -4,12 +4,12 @@
         <h3>{{ titleComp }}</h3>
 
         <div class="input-group">
-            <span class="mt-1 me-2">Nome do Funcionário</span>
+            <span class="mt-1 mx-1 col-2">Nome do Funcionário</span>
             <input type="text" [(ngModel)] = "FuncionarioAtualizarDado.nome_Funcionario" placeholder="Informe o nome do funcionário" class="form-control"/>
         </div>
 
         <div class="input-group">
-            <span class="mt-1 mx-4">Departamento</span>
+            <span class="mt-1 mx-1 col-2">Departamento</span>
             <select class="form-select" type="text" [(ngModel)] = "FuncionarioAtualizarDado.nome_Depart">
                 <!--option selected></option-->
                 <option *ngFor = "let itens of listaDepartamento" value="{{itens.nome_Departamento}}">{{itens.nome_Departamento}}</option>
@@ -17,7 +17,7 @@
         </div>
 
         <div class="input-group">
-            <span class="mt-1 mx-3">Data da contração</span>
+            <span class="mt-1 mx-1 col-2">Data da contração</span>
             <input type="date" [(ngModel)] = "FuncionarioAtualizarDado.dia_Contratacao" placeholder="Informe a data de contratação do funcionário" class="form-control"/>
         </div>
 
