@@ -1,4 +1,6 @@
-﻿namespace BackEnd.Data.Entities
+﻿using System.Data.SqlTypes;
+
+namespace BackEnd.Data.Entities
 {
     public class Funcionario
     {

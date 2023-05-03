@@ -3,5 +3,5 @@ export interface FuncionarioInterface{
     id: number,
     nome_Funcionario: string,
     nome_Depart: string,
-    dia_Contratacao: any
+    dia_Contratacao: Date
 }
